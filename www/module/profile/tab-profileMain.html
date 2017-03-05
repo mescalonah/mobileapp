@@ -1,0 +1,23 @@
+<ion-view view-title="Profile">
+        <ion-nav-buttons side="right">
+      <button class="button" ui-sref="tab.profile">
+           <strong>Edit <i class="ion-android-create"></i></strong>
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="trackedItem in trackedItems" type="item-text-wrap">
+        <h1>Your details:</h1>
+        &nbsp;
+        <h2>Name</h2><p>{{trackedItem.name}}</p>
+        &nbsp;
+        <h2>Surname</h2><p>{{trackedItem.surname}}</p>
+        &nbsp;
+        <h2>Hobbies</h2><p>{{trackedItem.hobbies}}</p>
+        &nbsp;
+        <h2>Description</h2><p>{{trackedItem.description}}</p>
+        &nbsp;
+      </ion-item>
+     </ion-list>
+     </ion-content>
+</ion-view>

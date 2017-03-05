@@ -1,0 +1,23 @@
+<ion-view view-title="{{item.title}}">
+  <ion-content class="padding">  
+<h2>{{item.$title}}</h2>
+<map center="{{coords.latitude}}, {{coords.longitude}}" zoom="13" 
+disable-default-u-i="true">
+
+<marker
+    
+    position="{{[item.starts.split(',')[0],item.starts.split(',')[1]]}}" label="A">
+
+</marker>
+
+<marker
+    
+    position="{{[item.ends.split(',')[0],item.ends.split(',')[1]]}}" label="B">
+
+</marker>
+</map>
+  &nbsp;
+<p>Description: {{item.description}}</p>
+
+  </ion-content>
+</ion-view>

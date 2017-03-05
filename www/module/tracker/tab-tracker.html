@@ -1,0 +1,24 @@
+<ion-view view-title="Tracked Journeys">
+    <ion-nav-buttons side="right">
+      <button class="button" ui-sref="tab.addTrackedItem">
+          <strong> Add <i class="icon ion-ios-plus-outline"></i></strong>
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="trackedItem in trackedItems" type="item-text-wrap" href="#/tab/tracker/{{trackedItem.$id}}">
+        <h2>{{trackedItem.title}}</h2> 
+        &nbsp;
+        <p><strong>Starting Point:</strong> {{trackedItem.starts.split(',')[2]}}</p>
+        <p><strong>Ending Point:</strong> {{trackedItem.ends.split(',')[2]}}</p>
+        <p><strong>Description:</strong> {{trackedItem.description}}</p>
+        <p><strong>Date:</strong> {{trackedItem.date |date:'yyyy-MM-dd'}}</p>
+        
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="clickrem(trackedItem)" >
+          Delete
+        </ion-option-button>
+      </ion-item>
+     </ion-list>
+     </ion-content>
+</ion-view>

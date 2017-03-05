@@ -1,0 +1,56 @@
+<ion-view view-title="Add Tracked Item">
+  <ion-content class="padding">
+   
+           <form ng-submit="addTrackerItem(trackItemForm)" name="trackItemForm" novalidate="novalidate">
+	            <label class="item item-input" ng-class="{'has-error': trackItemForm.title.$invalid}">
+	              <span class="input-label">Title</span>
+	              <input 
+	           	  type="text" 
+	              name="title" 
+	              ng-model="trackerItem.title" 
+	              ng-required="true" 
+	              ng-minlength="5"
+	              ng-maxlength="10"
+	              >
+	            </label>
+	            
+	           
+	            <div class="form-errors" ng-messages="trackItemForm.title.$error" style="color: maroon" role="alert">
+	   <div ng-messages-include="module/errors/form-errors.html"></div>
+	      </div>
+	            	            
+		 <label class="item item-input item-stacked label">
+												<span class="input-label" >Starting Point: </span>
+												<select name="starts"  ng-model="trackerItem.starts">
+															<option ng-repeat="i in st" ng-model="trackerItem.starts" value={{i.position.lat}},{{i.position.lng}},{{i.name}} id={{i.position.lat}},{{i.position.lng}}>{{i.name}}</option>
+												</select> 
+												<input type=hidden name=otherValue id=otherValue />
+							 </label>    
+
+							 	            
+		 <label class="item item-input item-stacked label">
+												<span class="input-label" >Ending Point: </span>
+												<select name="ends"  ng-model="trackerItem.ends">
+															<option ng-repeat="i in st" ng-model="trackerItem.ends" value={{i.position.lat}},{{i.position.lng}},{{i.name}} id={{i.position.lat}},{{i.position.lng}}>{{i.name}}</option>
+												</select> 
+												<input type=hidden name=otherValue id=otherValue />
+							 </label>         
+	            
+	        				 <label class="item item-input item-stacked label">
+	              <span class="input-label">Description</span>
+	              <input type="text" name="description" ng-model="trackerItem.description">
+	            </label>
+	          <div class="padding">
+	            <button class="button button-block button-positive" type="submit">
+	              Add Item
+	            </button>
+	     
+	          </div>
+	          
+	          <pre>{{trackerItemForm.title.$error | json}} {{trackerItem.latitude | json}}</pre>
+	             
+	      
+	      </form> 
+	       
+  </ion-content>
+</ion-view>

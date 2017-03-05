@@ -1,0 +1,22 @@
+<ion-view view-title="FB Tracked Photos">
+    <ion-nav-buttons side="right">
+      <button class="button" ui-sref="tab.addTrackedPhotoItemToFB">
+           <i class="icon ion-ios-plus-outline"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+     <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" 
+      ng-repeat="trackedItem in trackedItems" type="item-text-wrap" 
+      href="#/tab/fbPhotoItemDetail/{{trackedItem.$id}}"> 
+        
+         <img ng-src="data:image/jpeg;base64,{{trackedItem.imageData}}" alt="?" />
+        
+        <h2>{{trackedItem.title}}</h2>
+        <p>{{trackedItem.description}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      
+      </ion-item>
+     </ion-list>
+     </ion-content>
+</ion-view>
